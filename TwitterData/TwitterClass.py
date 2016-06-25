@@ -26,3 +26,12 @@ class TwitterClass:
 
         for tweet in cursor:
             print(tweet.text)
+
+    def searchTweetsWithoutRT(self, hashtag):
+        cursor = tweepy.Cursor(self.api.search,
+                               q=hashtag + " -RT",
+                               count=100,
+                               result_type="recent").items()
+
+        for tweet in cursor:
+            print(tweet.text)
