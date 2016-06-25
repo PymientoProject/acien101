@@ -7,4 +7,4 @@ access_token = ""
 access_token_secret = ""
 
 twitterObj = TwitterClass.TwitterClass(consumer_key, consumer_secret, access_token, access_token_secret)
-twitterObj.searchTweets()
+twitterObj.searchTweetsWithoutRT("#PyConES", 10)
