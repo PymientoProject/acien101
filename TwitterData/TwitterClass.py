@@ -18,9 +18,9 @@ class TwitterClass:
         for tweet in public_tweets:
             print(tweet.text)
 
-    def searchTweets(self):
+    def searchTweets(self, hashtag):
         cursor = tweepy.Cursor(self.api.search,
-                               q="%23PyConES16",
+                               q=hashtag,
                                count=100,
                                result_type="recent").items()
 
