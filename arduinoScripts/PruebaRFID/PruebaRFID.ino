@@ -16,6 +16,7 @@ MFRC522::MIFARE_Key key;
 byte nuidPICC[3];
 
 byte guitar[4] = {53, 07, 04, 109};
+byte piano[4] = {131, 43, 239, 117};
 
 void setup() { 
   Serial.begin(9600);
@@ -61,6 +62,14 @@ void loop() {
 
         Serial.println("guitarra!!");
       
+    }
+
+    if(piano[0] == rfid.uid.uidByte[0] &&
+       piano[1] == rfid.uid.uidByte[1] &&
+       piano[2] == rfid.uid.uidByte[2] &&
+       piano[3] == rfid.uid.uidByte[3]){
+
+      Serial.println("piano");
     }
   // Halt PICC
   rfid.PICC_HaltA();
