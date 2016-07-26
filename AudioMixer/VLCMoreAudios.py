@@ -3,7 +3,10 @@ import os.path
 import time
 import threading
 
-def threadFunction(filename):
+def inputListener():
+    inputdata = input('0 to quit the first song, 1 to quit the second song')
+
+def startSong(filename):
     instance = vlc.Instance()
     mediaplayer = instance.media_player_new()
 
@@ -12,10 +15,7 @@ def threadFunction(filename):
     mediaplayer.set_media(media)
     mediaplayer.play()
 
-t = threading.Thread(target=threadFunction, args=("song1.mp3",), name="first")
-s = threading.Thread(target=threadFunction, args=("song0.mp3",), name="second")
-
-t.start()
-s.start()
+startSong("song0.mp3")
+startSong("song1.mp3")
 
 time.sleep(10)
