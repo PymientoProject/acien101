@@ -1,21 +1,23 @@
 import vlc
 import os.path
 import time
-import threading
+import CustomVLCClass
 
 def inputListener():
     inputdata = input('0 to quit the first song, 1 to quit the second song')
+    if(inputdata == '0'):
+        a.pause()
+        print("Quiting 0")
+    elif(inputdata == '1'):
+        b.pause()
+        print("Quiting 1")
 
-def startSong(filename):
-    instance = vlc.Instance()
-    mediaplayer = instance.media_player_new()
 
-    media = instance.media_new(
-        os.path.normpath(os.getcwd() + "/audio/" + filename))
-    mediaplayer.set_media(media)
-    mediaplayer.play()
 
-startSong("song0.mp3")
-startSong("song1.mp3")
+a = CustomVLCClass.CustomVLCClass(filename="song0.mp3")
+b = CustomVLCClass.CustomVLCClass(filename="song1.mp3")
+
+inputListener()
 
 time.sleep(10)
+

@@ -1,0 +1,23 @@
+import vlc
+import os
+
+class CustomVLCClass:
+
+    def __init__(self, filename):
+        self.instance = vlc.Instance()
+        self.mediaplayer = self.instance.media_player_new()
+
+        self.media = self.instance.media_new(
+            os.path.normpath(os.getcwd() + "/audio/" + filename))
+        self.mediaplayer.set_media(self.media)
+        self.mediaplayer.play()
+
+
+    def stop(self):
+        self.mediaplayer.stop
+
+    def start(self):
+        self.mediaplayer.play
+
+    def pause(self):
+        self.mediaplayer.pause()
