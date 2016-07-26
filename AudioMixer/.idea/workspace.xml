@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinimumVLC.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MinimumVLC.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MinimumVLC.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="76" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -45,11 +45,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VLCMoreAudios.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MultiplesStreams.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultiplesStreams.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-289">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VLCMoreAudios.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VLCMoreAudios.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            <state relative-caret-position="300">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -70,8 +82,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Prueba.py" />
-        <option value="$PROJECT_DIR$/VLCMoreAudios.py" />
         <option value="$PROJECT_DIR$/MinimumVLC.py" />
+        <option value="$PROJECT_DIR$/VLCMoreAudios.py" />
       </list>
     </option>
   </component>
@@ -148,7 +160,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.MinimumVLC">
+  <component name="RunManager" selected="Python.VLCMoreAudios">
     <configuration default="false" name="Prueba" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -179,6 +191,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AudioMixer" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MinimumVLC.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="VLCMoreAudios" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AudioMixer" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VLCMoreAudios.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -317,14 +346,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.Prueba" />
       <item index="1" class="java.lang.String" itemvalue="Python.MinimumVLC" />
+      <item index="2" class="java.lang.String" itemvalue="Python.VLCMoreAudios" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.MinimumVLC" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Prueba" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.VLCMoreAudios" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MinimumVLC" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Prueba" />
       </list>
     </recent_temporary>
   </component>
@@ -403,20 +434,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VLCMoreAudios.py">
+    <entry file="file://$PROJECT_DIR$/MinimumVLC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        <state relative-caret-position="135">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="76" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MinimumVLC.py">
+    <entry file="file://$PROJECT_DIR$/MultiplesStreams.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+        <state relative-caret-position="-289">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VLCMoreAudios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
