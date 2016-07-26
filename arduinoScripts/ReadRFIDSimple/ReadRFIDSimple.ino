@@ -18,6 +18,8 @@ byte nuidPICC[3];
 byte guitar[4] = {53, 07, 04, 109};
 byte piano[4] = {131, 43, 239, 117};
 
+byte currentId;
+
 void setup() { 
   Serial.begin(9600);
   SPI.begin(); // Init SPI bus
@@ -30,8 +32,13 @@ void setup() {
  
 void loop() {
   // Look for new cards
-  if ( ! rfid.PICC_IsNewCardPresent())
+  if ( ! rfid.PICC_IsNewCardPresent()){
+    if(currentId != 3){
+      currentId = 3;
+      Serial.println(currentId);
+    }
     return;
+  }
     
   // Verify if the NUID has been readed
   if ( ! rfid.PICC_ReadCardSerial())
@@ -42,18 +49,24 @@ void loop() {
   if(guitar[0] == rfid.uid.uidByte[0] &&
     guitar[1] == rfid.uid.uidByte[1] &&
     guitar[2] == rfid.uid.uidByte[2] &&
-    guitar[3] == rfid.uid.uidByte[3]){
+    guitar[3] == rfid.uid.uidByte[3] &&
+    currentId != 0){
 
-    Serial.println("guitarra!!");
+    currentId = 0;
+    
+    Serial.println(currentId);
       
   }
 
   if(piano[0] == rfid.uid.uidByte[0] &&
     piano[1] == rfid.uid.uidByte[1] &&
     piano[2] == rfid.uid.uidByte[2] &&
-    piano[3] == rfid.uid.uidByte[3]){
+    piano[3] == rfid.uid.uidByte[3] &&
+    currentId != 1){
 
-    Serial.println("piano");
+    currentId = 1;
+    
+    Serial.println(currentId);
   }
     
   // Halt PICC
