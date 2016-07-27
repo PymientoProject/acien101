@@ -14,10 +14,11 @@ class CustomVLCClass:
 
 
     def stop(self):
-        self.mediaplayer.stop
+        self.mediaplayer.stop()
 
-    def start(self):
-        self.mediaplayer.play
+    def play(self):
+        self.mediaplayer.play()
 
     def pause(self):
         self.mediaplayer.pause()
+
