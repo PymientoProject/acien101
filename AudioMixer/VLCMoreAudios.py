@@ -24,8 +24,16 @@ def inputListener():
 
         inputListener() #Starting another time the inputListener
 
+    elif(inputdata == '00'):
+        a.mute()
+        inputListener()
+    elif(inputdata == '01'):
+        a.unmute()
+        inputListener()
 
-a = CustomVLCClass.CustomVLCClass(filename="song0.mp3")
+
+
+a = CustomVLCClass.CustomVLCClass(filename="prueba.mp3")
 b = CustomVLCClass.CustomVLCClass(filename="song1.mp3")
 
 inputListener()

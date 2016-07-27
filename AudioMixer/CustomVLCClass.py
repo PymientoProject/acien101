@@ -22,3 +22,8 @@ class CustomVLCClass:
     def pause(self):
         self.mediaplayer.pause()
 
+    def mute(self):
+        self.mediaplayer.audio_set_volume(0)
+
+    def unmute(self):
+        self.mediaplayer.audio_set_volume(100)
