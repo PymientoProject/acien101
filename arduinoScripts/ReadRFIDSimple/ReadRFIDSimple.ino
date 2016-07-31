@@ -18,7 +18,7 @@ byte nuidPICC[3];
 byte guitar[4] = {53, 07, 04, 109};
 byte piano[4] = {131, 43, 239, 117};
 
-byte currentId;
+int currentId;
 
 void setup() { 
   Serial.begin(9600);
@@ -35,7 +35,7 @@ void loop() {
   if ( ! rfid.PICC_IsNewCardPresent()){
     if(currentId != 3){
       currentId = 3;
-      Serial.println(currentId);
+      Serial.println(3);
     }
     return;
   }
@@ -54,7 +54,7 @@ void loop() {
 
     currentId = 0;
     
-    Serial.println(currentId);
+    Serial.println(0);
       
   }
 
@@ -66,7 +66,7 @@ void loop() {
 
     currentId = 1;
     
-    Serial.println(currentId);
+    Serial.println(1);
   }
     
   // Halt PICC
