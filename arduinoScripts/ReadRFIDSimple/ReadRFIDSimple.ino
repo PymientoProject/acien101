@@ -17,6 +17,8 @@ byte nuidPICC[3];
 
 byte guitar[4] = {53, 07, 04, 109};
 byte piano[4] = {131, 43, 239, 117};
+byte sample[4] = {229, 211, 125, 99};
+byte keyboard[4] = {69, 42, 174, 107};
 
 int currentId;
 
@@ -67,6 +69,28 @@ void loop() {
     currentId = 1;
     
     Serial.println(1);
+  }
+
+  if(sample[0] == rfid.uid.uidByte[0] &&
+    sample[1] == rfid.uid.uidByte[1] &&
+    sample[2] == rfid.uid.uidByte[2] &&
+    sample[3] == rfid.uid.uidByte[3] &&
+    currentId != 2){
+
+    currentId = 2;
+    
+    Serial.println(2);
+  }
+
+  if(keyboard[0] == rfid.uid.uidByte[0] &&
+    keyboard[1] == rfid.uid.uidByte[1] &&
+    keyboard[2] == rfid.uid.uidByte[2] &&
+    keyboard[3] == rfid.uid.uidByte[3] &&
+    currentId != 4){
+
+    currentId = 4;
+    
+    Serial.println(4);
   }
     
   // Halt PICC
