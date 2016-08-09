@@ -10,9 +10,17 @@
 
 #define SS_PIN2 8
 #define RST_PIN2 7
+
+#define SS_PIN3 6
+#define RST_PIN3 5
+
+#define SS_PIN4 4
+#define RST_PIN4 3
  
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 MFRC522 rfid2(SS_PIN2, RST_PIN2); // Instance of the class
+MFRC522 rfid3(SS_PIN3, RST_PIN3); // Instance of the class
+MFRC522 rfid4(SS_PIN4, RST_PIN4); // Instance of the class
 
 MFRC522::MIFARE_Key key; 
 MFRC522::PICC_Type piccType;
@@ -20,14 +28,30 @@ MFRC522::PICC_Type piccType;
 // Init array that will store new NUID 
 byte nuidPICC[3];
 
-byte piano[4] = {131, 43, 239, 117};
-byte sample[4] = {229, 211, 125, 99};
+byte a[4] = {131, 43, 239, 117};
+byte b[4] = {229, 211, 125, 99};
+byte c[4] = {22, 77, 173, 88};
+byte d[4] = {181, 54, 120, 99};
+byte e[4] = {229, 79, 145, 100};
+/*
+byte asdf[4] = {69, 42, 174, 107};
+byte asdf[4] = {05, 193, 44, 119};
+byte asdf[4] = {53, 07, 04, 109};
+byte asdf[4] = {213, 22, 34, 119};
+byte asdf[4] = {101, 137, 38, 119};
+
+*/
+
 
 int currentId;
 int currentId2;
+int currentId3;
+int currentId4;
 
 int lastId;
 int lastId2;
+int lastId3;
+int lastId4;
 
 void setup() { 
   Serial.begin(9600);
@@ -49,8 +73,20 @@ void loop() {
     Serial.println("1" + String(currentId2));
   }
 
+  currentId3 = readModule(rfid3);
+  if(currentId3 != lastId3){
+    Serial.println("2" + String(currentId3));
+  }
+
+  currentId4 = readModule(rfid4);
+  if(currentId4 != lastId4){
+    Serial.println("3" + String(currentId4));
+  }
+  
   lastId = currentId;
   lastId2 = currentId2;
+  lastId3 = currentId3;
+  lastId4 = currentId4;
 }
 
 int readModule(MFRC522 module){
@@ -78,10 +114,10 @@ int readModule(MFRC522 module){
     
   piccType = module.PICC_GetType(rfid.uid.sak);
    
-  if(piano[0] == module.uid.uidByte[0] &&
-    piano[1] == module.uid.uidByte[1] &&
-    piano[2] == module.uid.uidByte[2] &&
-    piano[3] == module.uid.uidByte[3]){
+  if(a[0] == module.uid.uidByte[0] &&
+    a[1] == module.uid.uidByte[1] &&
+    a[2] == module.uid.uidByte[2] &&
+    a[3] == module.uid.uidByte[3]){
     // Halt PICC
     module.PICC_HaltA();
 
@@ -91,10 +127,10 @@ int readModule(MFRC522 module){
     return 1;
   }
 
-  if(sample[0] == module.uid.uidByte[0] &&
-    sample[1] == module.uid.uidByte[1] &&
-    sample[2] == module.uid.uidByte[2] &&
-    sample[3] == module.uid.uidByte[3]){
+  if(b[0] == module.uid.uidByte[0] &&
+    b[1] == module.uid.uidByte[1] &&
+    b[2] == module.uid.uidByte[2] &&
+    b[3] == module.uid.uidByte[3]){
 
     // Halt PICC
     module.PICC_HaltA();
@@ -103,6 +139,51 @@ int readModule(MFRC522 module){
     module.PCD_StopCrypto1();
 
     return 2;
+    
+  }
+
+  if(c[0] == module.uid.uidByte[0] &&
+    c[1] == module.uid.uidByte[1] &&
+    c[2] == module.uid.uidByte[2] &&
+    c[3] == module.uid.uidByte[3]){
+
+    // Halt PICC
+    module.PICC_HaltA();
+
+    // Stop encryption on PCD
+    module.PCD_StopCrypto1();
+
+    return 3;
+    
+  }
+
+  if(d[0] == module.uid.uidByte[0] &&
+    d[1] == module.uid.uidByte[1] &&
+    d[2] == module.uid.uidByte[2] &&
+    d[3] == module.uid.uidByte[3]){
+
+    // Halt PICC
+    module.PICC_HaltA();
+
+    // Stop encryption on PCD
+    module.PCD_StopCrypto1();
+
+    return 4;
+    
+  }
+
+  if(e[0] == module.uid.uidByte[0] &&
+    e[1] == module.uid.uidByte[1] &&
+    e[2] == module.uid.uidByte[2] &&
+    e[3] == module.uid.uidByte[3]){
+
+    // Halt PICC
+    module.PICC_HaltA();
+
+    // Stop encryption on PCD
+    module.PCD_StopCrypto1();
+
+    return 5;
     
   }
 

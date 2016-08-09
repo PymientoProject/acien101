@@ -10,6 +10,7 @@ class CustomVLCClass:
         self.media = self.instance.media_new(
             os.path.normpath(os.getcwd() + "/audio/" + filename))
         self.mediaplayer.set_media(self.media)
+        self.mediaplayer.audio_set_volume(0)
         self.mediaplayer.play()
 
 
@@ -26,4 +27,4 @@ class CustomVLCClass:
         self.mediaplayer.audio_set_volume(0)
 
     def unmute(self):
-        self.mediaplayer.audio_set_volume(100)
+        self.mediaplayer.audio_set_volume(50)

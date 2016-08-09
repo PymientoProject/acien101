@@ -32,6 +32,11 @@ def inputListener():
         inputListener()
 
 def arduinoListener():
+    past0 = 0     #For counting the last chip in the field
+    past1 = 0
+    past2 = 0
+    past3 = 0
+
     while True:
         try:
             line = ser.readline()
@@ -40,18 +45,164 @@ def arduinoListener():
 
             x = line.decode('ascii', errors='replace')
 
-            if x == '3\r\n':
-                print("3")
-                a.mute()
-                b.mute()
+            if x == '00\r\n':
+                print("00")
+                if past0 == 1:
+                    a.mute()
+                if past0 == 2:
+                    b.mute()
+                if past0 == 3:
+                    c.mute()
+                if past0 == 4:
+                    d.mute()
+                if past0 == 5:
+                    e.mute()
+                past0 = 0
 
-            elif x == '0\r\n':
-                print("0")
+            elif x == '01\r\n':
+                print("01")
+                past0 = 1
                 a.unmute()
 
-            elif x == '1\r\n':
-                print("1")
+            elif x == '02\r\n':
+                print("02")
+                past0 = 2
                 b.unmute()
+
+            elif x == '03\r\n':
+                print("03")
+                past0 = 3
+                c.unmute()
+
+            elif x == '04\r\n':
+                print("04")
+                past0 = 4
+                d.unmute()
+
+            elif x == '05\r\n':
+                print("05")
+                past0 = 5
+                e.unmute()
+
+            if x == '10\r\n':
+                print("10")
+                if past1 == 1:
+                    a.mute()
+                if past1 == 2:
+                    b.mute()
+                if past1 == 3:
+                    c.mute()
+                if past1 == 4:
+                    d.mute()
+                if past1 == 5:
+                    e.mute()
+                past1 = 0
+
+            elif x == '11\r\n':
+                print("11")
+                past1 = 1
+                a.unmute()
+
+            elif x == '12\r\n':
+                print("12")
+                past1 = 2
+                b.unmute()
+
+            elif x == '13\r\n':
+                print("13")
+                past1 = 3
+                c.unmute()
+
+            elif x == '14\r\n':
+                print("14")
+                past1 = 4
+                d.unmute()
+
+            elif x == '15\r\n':
+                print("15")
+                past1 = 5
+                e.unmute()
+
+            if x == '20\r\n':
+                print("20")
+                if past2 == 1:
+                    a.mute()
+                if past2 == 2:
+                    b.mute()
+                if past2 == 3:
+                    c.mute()
+                if past2 == 4:
+                    d.mute()
+                if past2 == 5:
+                    e.mute()
+                past1 = 0
+
+            elif x == '21\r\n':
+                print("21")
+                past2 = 1
+                a.unmute()
+
+            elif x == '22\r\n':
+                print("22")
+                past2 = 2
+                b.unmute()
+
+            elif x == '23\r\n':
+                print("23")
+                past2 = 3
+                c.unmute()
+
+            elif x == '24\r\n':
+                print("24")
+                past2 = 4
+                d.unmute()
+
+            elif x == '25\r\n':
+                print("25")
+                past2 = 5
+                e.unmute()
+
+            if x == '30\r\n':
+                print("30")
+                if past3 == 1:
+                    a.mute()
+                if past3 == 2:
+                    b.mute()
+                if past3 == 3:
+                    c.mute()
+                if past3 == 4:
+                    d.mute()
+                if past3 == 5:
+                    e.mute()
+                past3 = 0
+
+            elif x == '31\r\n':
+                print("31")
+                past3 = 1
+                a.unmute()
+
+            elif x == '32\r\n':
+                print("32")
+                past3 = 2
+                b.unmute()
+
+
+            elif x == '33\r\n':
+                print("33")
+                past3 = 3
+                c.unmute()
+
+            elif x == '34\r\n':
+                print("34")
+                past3 = 4
+                d.unmute()
+
+            elif x == '35\r\n':
+                print("35")
+                past3 = 5
+                e.unmute()
+
+
 
 
         except KeyboardInterrupt:
@@ -65,8 +216,12 @@ time.sleep(1)
 ser.flushInput()
 ser.setDTR(True)
 
-a = CustomVLCClass.CustomVLCClass(filename="song0.mp3")
-b = CustomVLCClass.CustomVLCClass(filename="song1.mp3")
+a = CustomVLCClass.CustomVLCClass(filename="1.mp3")
+b = CustomVLCClass.CustomVLCClass(filename="2.mp3")
+c = CustomVLCClass.CustomVLCClass(filename="3.mp3")
+d = CustomVLCClass.CustomVLCClass(filename="4.mp3")
+e = CustomVLCClass.CustomVLCClass(filename="5.mp3")
+
 
 inputArduinoThread = threading.Thread(target=arduinoListener, name="inputAduino")
 inputArduinoThread.start()
