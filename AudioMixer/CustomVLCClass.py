@@ -8,7 +8,7 @@ class CustomVLCClass:
         self.mediaplayer = self.instance.media_player_new()
 
         self.media = self.instance.media_new(
-            os.path.normpath(os.getcwd() + "/audio/" + filename))
+            os.path.normpath(os.getcwd() + filename))
         self.mediaplayer.set_media(self.media)
         self.mediaplayer.audio_set_volume(0)
         self.mediaplayer.play()

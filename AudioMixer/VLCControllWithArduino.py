@@ -210,7 +210,7 @@ def arduinoListener():
             break
 
 
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1.0)
+ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=1.0)
 ser.setDTR(False)
 time.sleep(1)
 ser.flushInput()
