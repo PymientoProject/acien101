@@ -14,16 +14,8 @@ with ser:
             if not line:
                 continue
 
-            x = line.decode('ascii', errors='replace')
-
-            if x == '3\r\n':
-                print("3")
-
-            elif x == '0\r\n':
-                print("0")
-
-            elif x == '1\r\n':
-                print("1")
+		
+            print(line)
 
 
         except KeyboardInterrupt:
