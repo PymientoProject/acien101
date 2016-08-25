@@ -1,0 +1,14 @@
+README
+
+Primero de todo, antes de hacer fucionar el proyecto hay que crear la base de datos y todo el percal:
+
+pi@raspberrypi:~ $ mysql -h localhost -u root -p
+Enter password: mysqlroot
+
+create database TwitterDB;
+use TwitterDB
+CREATE TABLE TweeterData(Planta int, Value int);
+INSERT INTO TweeterData VALUES(1,0);
+INSERT INTO TweeterData VALUES(2,0);
+INSERT INTO TweeterData VALUES(3,0);
+INSERT INTO TweeterData VALUES(4,0);
