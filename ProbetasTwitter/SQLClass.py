@@ -34,8 +34,8 @@ class SQLClass:
         cursor.close
         return dict['VALUE']
 
-    def insertNumTweets(self, planta):
-        query = "UPDATE TweeterData SET Value=1 WHERE Planta=" + str(planta)
+    def insertNumTweets(self, value,planta):
+        query = "UPDATE TweeterData SET Value=" + str(value) + " WHERE Planta=" + str(planta)
         print(query)
 
         cursor = self.conn.cursor()

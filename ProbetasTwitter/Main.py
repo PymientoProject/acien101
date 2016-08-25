@@ -21,7 +21,7 @@ while True:
     if lastTweet[0] != currentTwit:
         numberOfTweets[0] = numberOfTweets[0] + 1
 
-        obj.insertNumTweets(obj.getNumTweetsWithNum(1) + 1)
+        obj.insertNumTweets(obj.getNumTweetsWithNum(1) + 1, 1)
 
         lastTweet[0] = currentTwit
 
@@ -29,7 +29,7 @@ while True:
     if lastTweet[1] != currentTwit:
         numberOfTweets[1] = numberOfTweets[1] + 1
 
-        obj.insertNumTweets(obj.getNumTweetsWithNum(2) + 1)
+        obj.insertNumTweets(obj.getNumTweetsWithNum(2) + 1, 2)
 
         lastTweet[1] = currentTwit
 
@@ -37,7 +37,7 @@ while True:
     if lastTweet[2] != currentTwit:
         numberOfTweets[2] = numberOfTweets[2] + 1
 
-        obj.insertNumTweets(obj.getNumTweetsWithNum(3) + 1)
+        obj.insertNumTweets(obj.getNumTweetsWithNum(3) + 1, 3)
 
         lastTweet[2] = currentTwit
 
@@ -45,7 +45,7 @@ while True:
     if lastTweet[3] != currentTwit:
         numberOfTweets[3] = numberOfTweets[3] + 1
 
-        obj.insertNumTweets(obj.getNumTweetsWithNum(4) + 1)
+        obj.insertNumTweets(obj.getNumTweetsWithNum(4) + 1, 4)
 
         lastTweet[3] = currentTwit
 
