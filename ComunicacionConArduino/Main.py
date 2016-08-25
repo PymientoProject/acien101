@@ -1,7 +1,7 @@
 import serial
 import time
 
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1.0)
+ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=1.0)
 ser.setDTR(False)
 time.sleep(1)
 ser.flushInput()
@@ -14,8 +14,7 @@ with ser:
             if not line:
                 continue
 
-		
-            print(line)
+            print (line)
 
 
         except KeyboardInterrupt:

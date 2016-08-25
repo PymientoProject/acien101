@@ -27,4 +27,4 @@ class CustomVLCClass:
         self.mediaplayer.audio_set_volume(0)
 
     def unmute(self):
-        self.mediaplayer.audio_set_volume(50)
+        self.mediaplayer.audio_set_volume(100)
